@@ -1,5 +1,5 @@
 import unittest
-from ..src.find_road import find_bad_road
+from lab5.src.find_road import find_bad_road
 
 
 class BadRoadTests(unittest.TestCase):

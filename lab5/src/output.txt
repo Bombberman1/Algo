@@ -1,0 +1,2 @@
+['Gas1', ['Sambir', 'Dolyna', 'Volyn', 'Chernihiv']]
+['Gas2', ['Lviv', 'Stryi', 'Kyiv', 'Sambir', 'Dolyna']]
