@@ -1,0 +1,3 @@
+"film", "factory", "banana", "fabric", "board",
+"ban", "bones", "figure", "apple", "his", "him",
+"history", "actor", "apply"
