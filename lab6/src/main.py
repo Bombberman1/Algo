@@ -11,5 +11,6 @@ if __name__ == "__main__":
     print(trie.find_word("his"))
     print(trie.find_word("fi"))
     print(trie.find_words_with_prefix("ap", output_in_file=True))
+    print(trie.find_word_with_propositions("ba"))
 
     print(get_words_from_file())

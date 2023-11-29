@@ -37,6 +37,31 @@ class Trie:
 
         return node.word_end
 
+    def find_word_with_propositions(self, word: str) -> list:
+        node = self.root
+        start_node_prefix = ""
+        for character in word:
+            if character not in node.children:
+                return [False, []]
+            start_node_prefix += character
+            node = node.children[character]
+        node_is_end = node.word_end
+
+        if not node_is_end:
+            proposition_words = []
+            stack = [(node, start_node_prefix)]
+            while stack:
+                node, general_prefix = stack.pop()
+                for character, value in node.children.items():
+                    current_prefix = general_prefix + character
+                    if value.word_end:
+                        proposition_words.append(current_prefix)
+                    stack.append((value, current_prefix))
+
+            return [node_is_end, proposition_words]
+
+        return [node_is_end]
+
     def find_words_with_prefix(self, find_prefix: str, output_in_file=False) -> list:
         words = []
 
