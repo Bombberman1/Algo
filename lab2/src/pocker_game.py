@@ -1,10 +1,25 @@
-def play_pocker(cards):
+def check_normal_cards(cards: list) -> bool:
+    if len(cards) > 10000:
+        return False
+
+    for card in cards:
+        if not 0 <= card <= 1000000:
+            return False
+
+    return True
+
+
+def play_pocker(cards: list) -> int:
+    if not check_normal_cards(cards):
+        print("You break rules")
+        return 0
+
     cards_set = set(cards)
     jokers = cards.count(0)
     max_length = 0
 
     for card in cards_set:
-        if card != 0 and card - 1 not in cards_set:
+        if card != 0 and card - 1 not in cards_set or card == 1:
             current_length = 1
             current_card = card + 1
             available_jokers = jokers
