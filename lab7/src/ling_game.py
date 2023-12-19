@@ -26,6 +26,9 @@ def play_ling_game(url="wchain.in.txt") -> None:
 
 
 def wchain_better(words):
+    if words is None:
+        return -1
+
     word_set = set(words)
     max_chain_length = 1
     memo = {}
